@@ -34,3 +34,39 @@ let root3(a) =
 
 root3(9.);;
 
+
+let rec sum(a,b) = [[((if List.hd a = [] then 0 else List.hd a) + (if List.hd b = [] then 0 else List.hd b))]
+                                  @ sum(List.tl a, List.tl b)];;
+
+
+let rec sqrList(x) = if x = [] then [] else ([List.hd x * List.hd x] @ sqrList(List.tl x) );;
+
+         
+
+
+
+let rec sum(a,b) =
+  if( a = [] && b = []) then []
+  else if( a = [] && b != []) then [List.hd b] @ sum([], List.tl b)
+  else if( a != [] && b = []) then [List.hd a] @ sum(List.tl a, [])
+  else [List.hd a + List.hd b ] @ sum(List.tl a,List.tl b);;
+
+
+sum([1;2;3;4],[1;2;3;4;5]);;
+
+let suma(a,b) =
+  let rec summ(a,b,res) = 
+    if( a = [] && b = []) then res
+    else if( a = [] && b != []) then summ([], List.tl b, res @ [List.hd b]) 
+    else if( a != [] && b = []) then summ(List.tl a, [], res @ [List.hd a])
+    else summ(List.tl a, List.tl b, res @ [List.hd a + List.hd b ])
+  in summ(a,b,[]);; 
+
+
+suma([1;2;3;4],[1;2;3;4;5]);;
+
+def sum(a:List[Int],b:List[Int]):List[Int] =
+  if (a == Nil && b == Nil ) List()
+  else if ( a == Nil && b != Nil){ b.head :: sum(Nil,b.tail) }
+  else if( a != Nil && b == Nil) a.head :: sum(a.tail, Nil)
+  else ( a.head + b.head ) :: sum(a.tail,b.tail)

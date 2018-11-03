@@ -4,6 +4,7 @@
     <list default="true" id="a55d7894-744a-41e6-8e83-0b0b00c4ac46" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scala.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Scala.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.sc" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.sc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test3.sc" beforeDir="false" afterPath="$PROJECT_DIR$/src/test3.sc" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -86,14 +87,52 @@
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.spring.boot.mvc.usages" />
     </session>
+    <session id="-1318972233">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.24" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="sc" value="974" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Scala" value="974" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="sc" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Scala" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test.sc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="68" column="97" selection-start-line="68" selection-start-column="97" selection-end-line="68" selection-end-column="97" />
+            <state relative-caret-position="240">
+              <caret line="86" column="48" selection-start-line="86" selection-start-column="48" selection-end-line="86" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test2.sc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -101,8 +140,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test3.sc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="52" column="10" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
+            <state relative-caret-position="225">
+              <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -125,10 +164,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/|.scala" />
-        <option value="$PROJECT_DIR$/src/test.sc" />
         <option value="$PROJECT_DIR$/src/main.java" />
         <option value="$PROJECT_DIR$/src/Fib.java" />
         <option value="$PROJECT_DIR$/src/test.java" />
+        <option value="$PROJECT_DIR$/src/test.sc" />
         <option value="$PROJECT_DIR$/src/test2.sc" />
         <option value="$PROJECT_DIR$/src/test3.sc" />
       </list>
@@ -225,16 +264,17 @@
       <workItem from="1539627251981" duration="11711000" />
       <workItem from="1540248157786" duration="14451000" />
       <workItem from="1540271493263" duration="4068000" />
+      <workItem from="1541258358410" duration="6696000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47653000" />
+    <option name="totallyTimeSpent" value="54349000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="30" width="1311" height="738" extended-state="6" />
+    <frame x="-1" y="50" width="1368" height="691" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.0927835" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09214502" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -252,7 +292,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49946752" weight="0.32951945" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5067407" side_tool="true" weight="0.33221477" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4932593" weight="0.32885906" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4932593" weight="0.32867134" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.32960597" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -321,24 +361,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test2.sc">
+    <entry file="file://$PROJECT_DIR$/src/test.sc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        <state relative-caret-position="240">
+          <caret line="86" column="48" selection-start-line="86" selection-start-column="48" selection-end-line="86" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.sc">
+    <entry file="file://$PROJECT_DIR$/src/test2.sc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="68" column="97" selection-start-line="68" selection-start-column="97" selection-end-line="68" selection-end-column="97" />
+        <state relative-caret-position="180">
+          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test3.sc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="52" column="10" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
+        <state relative-caret-position="225">
+          <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
         </state>
       </provider>
     </entry>

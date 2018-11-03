@@ -84,12 +84,14 @@ ListLength(List(1,2,3,4,5,6))
 
 // zad7
 
-def power(n:Int):Int = if(n == 0) 1 else n*silnia(n-1)
+def power(n:Int):Int = if(n == 0) 1 else n*power(n-1)
 
 power(6)
 
 def count2[A](a:A, n:List[A]):Int = if(n == Nil) 0 else { if(n.head == a) 1 + count2(a,n.tail) else count2(a,n.tail)}
 
 count2('t',List('a','t','t','m','o','t','r','t'))
+
+
 
 

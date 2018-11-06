@@ -1,5 +1,4 @@
-
-
+import scala.annotation.tailrec
 
 
 val xs = List("Ala", "ma", "koto","psa")
@@ -59,8 +58,9 @@ def sumtl(a:List[Int],b:List[Int],c:List[Int]):List[Int] = (a,b) match{
   case (_,_) => sumtl(a.tail,b.tail, c :+ (a.head + b.head) )
 }
 
-sumtl(List(1,2,3,4,5,6,7),List(1,2,3),List())
+sumtl(List(-1,-2,-3),List(1,2,3),List())
 
+/*
 
 def decode[A](a:List[(Int,A)]):List[A] = {
   def repeat[A](l:Int, b:A ):List[A] = {
@@ -74,9 +74,52 @@ def decode[A](a:List[(Int,A)]):List[A] = {
     repeat(l,b) ::: decode(a.tail)
   }
 
+}  */
+
+@tailrec
+def fdecode[A]( a:List[(Int,A)], result:List[A] ):List[A] = {
+  @tailrec
+  def repeat[A](l:Int, b:A, c:List[A] ):List[A] = {
+    if(l == 0) c
+    else repeat(l-1,b, c :+ b)
+  }
+
+  if(a == Nil) result
+
+  else{
+    val (l,b) = a.head
+    fdecode(a.tail, result ::: repeat(l,b,List()))
+  }
 }
 
-decode(List((3,'a'),(2,'b')))
+def decode[A](a:List[(Int,A)]):List[A] = {
+
+  @tailrec
+  def fdecode[A]( a:List[(Int,A)], result:List[A] ):List[A] = {
+    @tailrec
+    def repeat[A](l:Int, b:A, c:List[A] ):List[A] = {
+      if(l == 0) c
+      else repeat(l-1,b, c :+ b)
+    }
+
+    if(a == Nil) result
+
+    else{
+      val (l,b) = a.head
+      fdecode(a.tail, result ::: repeat(l,b,List()))
+    }
+  }
+
+  fdecode(a, List())
+
+}
+
+decode(List((3,'a'),(2,'b'),(1,8)))
+decode(List())
+decode(List((0,'a'),(1,'b'),(0,8)))
+decode(List((1,"Ala"),(1,"ma"),(3,"kota")))
+decode(List((1,'1'),(2,'2'),(3,"/")))
+
 
 
 

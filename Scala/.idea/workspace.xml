@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a55d7894-744a-41e6-8e83-0b0b00c4ac46" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lab5.sc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab5test.sc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab3.sc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab4zad2.sc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/list4.sc" beforeDir="false" afterPath="$PROJECT_DIR$/src/list4.sc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../node_modules/.lsp/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/../node_modules/.lsp/debug.log" afterDir="false" />
-    </list>
+    <list default="true" id="a55d7894-744a-41e6-8e83-0b0b00c4ac46" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +85,7 @@
     <session id="-1318972233">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.27" value="1" />
@@ -296,7 +287,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="50" width="1368" height="691" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.100453176" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

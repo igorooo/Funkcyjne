@@ -33,3 +33,5 @@ val tt = Node(1,
     Empty))
 
 breadth(tt)
+
+val t = 5%2

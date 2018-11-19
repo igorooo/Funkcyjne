@@ -1,6 +1,6 @@
 import scala.annotation.tailrec
 
-//tailrecursion
+//tailrecursion 
 def split[A](list:List[A]):(List[A],List[A]) = {
 
   @tailrec

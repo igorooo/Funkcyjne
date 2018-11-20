@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="a55d7894-744a-41e6-8e83-0b0b00c4ac46" name="Default Changelist" comment="">
 <<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/t2.sc" afterDir="false" />
@@ -16,6 +17,9 @@
       <change beforePath="$PROJECT_DIR$/../node_modules/.lsp/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/../node_modules/.lsp/debug.log" afterDir="false" />
 >>>>>>> c2edd22bea03c9b66dcb8b1766abd8924c349964
     </list>
+=======
+    <list default="true" id="a55d7894-744a-41e6-8e83-0b0b00c4ac46" name="Default Changelist" comment="" />
+>>>>>>> 2fb4535713a7b2502674dd26d49fc46bfbbaf38d
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,6 +104,7 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
 <<<<<<< HEAD
+<<<<<<< HEAD
           <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.24" value="1" />
@@ -111,6 +116,9 @@
           <entry key="project.opened" value="7" />
 =======
           <entry key="project.closed" value="6" />
+=======
+          <entry key="project.closed" value="7" />
+>>>>>>> 2fb4535713a7b2502674dd26d49fc46bfbbaf38d
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.27" value="1" />
@@ -387,7 +395,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="50" width="1368" height="691" extended-state="6" />
-    <editor active="true" />
     <layout>
 <<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.05058573" />

@@ -12,22 +12,20 @@ code( List('a','a','a','a','b','b','b','c','c','c','b','b','c'), List(), 'a', 0)
 
 val xx = List(1,2,3,4,5)
 
-def moveRight[A](n:List[A], offset:Int):List[A] = {
+def moveRight[A](offset:Int, n:List[A]):List[A] = {
 
-  val begin = offset % n.length
-
+  val begin =n.length - (offset % n.length)
   def moveR(iter:Int,xs:List[A],res:List[A]):List[A] = {
-    if( iter < begin ) moveR(iter+1, xs.tail, res :+ xs.head) else xs:::res
+    if( iter < begin ) moveR(iter+1, xs.tail, xs.head :: res) else xs:::(res.reverse)
   }
-
   moveR(0,n,List())
 }
 
-moveRight(xx,1)
-
-
-
-
+moveRight(1,List(1,2,3,4,5))
+moveRight(0,List(1,2,3,4,5))
+moveRight(3,List(1,2,3,4,5))
+moveRight(8,List(1,2,3,4,5))
+moveRight(1,List('a','b','c','d'))
 
 
 

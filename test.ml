@@ -8,7 +8,7 @@ let rec power(n) = if n = 0 then 1 else n*power(n-1);;
 
 power(3);;
 
-let rec fib(n) = if n < 2 then ( if n == 1 then 1 else 0) else fib(n-1) + fib(n-2);;
+let rec fib(n) = if n < 2 then ( if n = 1 then 1 else 0) else fib(n-1) + fib(n-2);;
 
 fib(10);;
 

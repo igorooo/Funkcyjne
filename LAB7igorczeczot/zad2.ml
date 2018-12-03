@@ -18,7 +18,7 @@ let lMult lista =
                      else match t() with
                       |LNil -> LNil
                       |LCons(hd,tl) -> lmulti (t()) hd
-  in lmulti lista 0
+  in lmulti (LCons(0, function() -> lista)) 0
 ;;
 
 
@@ -27,3 +27,13 @@ let listA = lfrom 0;;
 let listB = lMult listA;;
 
 ltake(16, listB);;
+
+
+let listBB = lMult listB;;
+
+ltake(16, listBB);;
+
+
+let listBBB = lMult listBB;;
+
+ltake(16, listBBB);;

@@ -87,7 +87,130 @@ DQueue.isEmpty qq;;
 
 
 
+module type QUEUE_MUT =
+sig
+	type 'a t
+	(* The type of queues containing elements of type ['a]. *)
+	exception Empty of string
+	(* Raised when [first q] is applied to an empty queue [q]. *)
+	exception Full of string
+	(* Raised when [enqueue(x,q)] is applied to a full queue [q]. *)
+	val empty: int -> 'a t
+	(* [empty n] returns a new queue of length [n], initially empty. *)
+	val enqueue: 'a * 'a t -> unit
+	(* [enqueue (x,q)] adds the element [x] at the end of a queue [q]. *)
+	val dequeue: 'a t -> unit
+	(* [dequeue q] removes the first element in queue [q] *)
+	val first: 'a t -> 'a
+	(* [first q] returns the first element in queue [q] without removing it  *)
+	(* from the queue, or raises [Empty] if the queue is empty.              *)
+	val isEmpty: 'a t -> bool
+	(* [isEmpty q] returns [true] if queue [q] is empty, otherwise returns   *)
+	(* [false].                                                              *)
+	val isFull: 'a t -> bool
+(* [isFull q] returns [true] if queue [q] is full, otherwise returns       *)
+(* [false].                                                                *)
+end ;;
 
+
+module CArrQueue : QUEUE_MUT =
+struct
+
+  type 'a t = {mutable size: int; mutable f: int; mutable r: int; mutable arr: 'a option array}
+  exception Empty of string
+  exception Full of string
+
+  let empty s = {size = s +1; f = 0; r = 0; arr = Array.make (s+1) None}
+
+  let isEmpty q = q.r = q.f
+  let isFull q = (q.r +1)mod q.size = q.f
+
+  let enqueue (elem, q) = if isFull q then raise (Full "full queue")
+                       else (Array.set q.arr q.r (Some elem); q.r <- ((q.r +1)mod q.size);)
+  
+  let dequeue q = if isEmpty q then ()
+                  else (Array.set q.arr q.f None; q.f <- ((q.f +1)mod q.size);)
+
+  let first q = if isEmpty q then raise (Empty "empty queue")
+                else let Some temp = Array.get q.arr q.f in temp
+end ;;
+
+let cq1 = CArrQueue.empty 4;;
+
+CArrQueue.isFull cq1;;
+CArrQueue.isEmpty cq1;;
+
+CArrQueue.enqueue (1,cq1);; 
+
+CArrQueue.isEmpty cq1;;
+
+CArrQueue.enqueue (2,cq1);;
+
+CArrQueue.enqueue (3,cq1);;
+
+CArrQueue.enqueue (4,cq1);;
+
+CArrQueue.isFull cq1;;
+
+CArrQueue.first cq1;;
+
+CArrQueue.dequeue cq1;;
+
+CArrQueue.first cq1;;
+
+CArrQueue.dequeue cq1;;
+
+CArrQueue.first cq1;;
+
+CArrQueue.dequeue cq1;;
+
+CArrQueue.first cq1;;
+
+CArrQueue.dequeue cq1;;
+
+CArrQueue.first cq1;;
+
+CArrQueue.isEmpty cq1;;
+
+
+# CArrQueue.isFull cq1;;
+- : bool = false
+# CArrQueue.isEmpty cq1;;
+- : bool = true
+# CArrQueue.enqueue (1,cq1);;
+- : unit = ()
+# CArrQueue.isEmpty cq1;;
+- : bool = false
+# CArrQueue.enqueue (2,cq1);;
+- : unit = ()
+# CArrQueue.enqueue (3,cq1);;
+- : unit = ()
+# CArrQueue.enqueue (4,cq1);;
+- : unit = ()
+# CArrQueue.isFull cq1;;
+- : bool = true
+# CArrQueue.first cq1;;
+- : int = 1
+# CArrQueue.dequeue cq1;;
+- : unit = ()
+# CArrQueue.first cq1;;
+- : int = 2
+# CArrQueue.dequeue cq1;;
+- : unit = ()
+# CArrQueue.first cq1;;
+- : int = 3
+# CArrQueue.dequeue cq1;;
+- : unit = ()
+# CArrQueue.first cq1;;
+- : int = 4
+# CArrQueue.isEmpty cq1;;
+- : bool = false
+# CArrQueue.dequeue cq1;;
+- : unit = ()
+# CArrQueue.first cq1;;
+Exception: CArrQueue.Empty "empty queue".
+# CArrQueue.isEmpty cq1;;
+- : bool = true
 
 
 module Queue : QUEUE_FUN = 

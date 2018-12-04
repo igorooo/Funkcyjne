@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>Test.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+.s3 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Test.java</font>
+</center></td></tr></table>
+<pre><span class="s0">public class </span><span class="s1">Test {</span>
+
+    <span class="s0">int </span><span class="s1">zawartosc = </span><span class="s2">0</span><span class="s0">;</span>
+
+
+
+    static void <span class="s1">argNiemodyfikowalny(</span><span class="s0">final </span><span class="s1">Test zmienna){</span>
+        zmienna.zawartosc = <span class="s2">1</span><span class="s0">;</span>
+        <span class="s3">//zmienna = null;    // nie mozna zmienic zawartosci argumentu przekazanego jako final</span>
+    <span class="s1">}</span>
+
+    <span class="s0">static void </span><span class="s1">argModyfikoiwalny(Test zmienna){</span>
+        zmienna.zawartosc = <span class="s2">1</span><span class="s0">;</span>
+        <span class="s1">zmienna = </span><span class="s0">null;</span>
+    <span class="s1">}</span>
+
+    <span class="s3">// nie mozemy zmienic referencji na ktora wskazuje zmienna 'niemodyfikowalna' ale</span>
+    // mozemy zmienic zawartosc obiektu na ktory zmienna final wskazuje
+
+    <span class="s0">public static void </span><span class="s1">main(String[] args){</span>
+        Test modyfikowalna = <span class="s0">new </span><span class="s1">Test()</span><span class="s0">;</span>
+        final <span class="s1">Test niemodyfikowalna = </span><span class="s0">new </span><span class="s1">Test()</span><span class="s0">;</span>
+
+        <span class="s3">// a)</span>
+        <span class="s1">argNiemodyfikowalny(modyfikowalna)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(modyfikowalna.zawartosc)</span><span class="s0">;  </span><span class="s3">//1</span>
+
+        // b)
+        <span class="s1">argNiemodyfikowalny(niemodyfikowalna)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(niemodyfikowalna.zawartosc)</span><span class="s0">; </span><span class="s3">//1</span>
+
+        // c)
+        <span class="s1">argModyfikoiwalny(modyfikowalna)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(modyfikowalna.zawartosc)</span><span class="s0">;  </span><span class="s3">//1</span>
+
+        // d)
+        <span class="s1">argModyfikoiwalny(niemodyfikowalna)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(niemodyfikowalna.zawartosc)</span><span class="s0">; </span><span class="s3">//1</span>
+    <span class="s1">}</span>
+}
+</pre>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>CAQueue.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+.s3 { color: #808080;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+CAQueue.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java.lang.reflect.Array</span><span class="s0">;</span>
+import <span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+
+public class <span class="s1">CAQueue&lt;E&gt; </span><span class="s0">implements </span><span class="s1">MyQueue&lt;E&gt; {</span>
+
+    ArrayList&lt;E&gt; ARR<span class="s0">;</span>
+    int <span class="s1">SIZE</span><span class="s0">,</span><span class="s1">f</span><span class="s0">,</span><span class="s1">r</span><span class="s0">;</span>
+
+    public <span class="s1">CAQueue(</span><span class="s0">int </span><span class="s1">SIZE){</span>
+        <span class="s0">this</span><span class="s1">.SIZE = SIZE+</span><span class="s2">1</span><span class="s0">;</span>
+        this<span class="s1">.f = </span><span class="s2">0</span><span class="s0">;</span>
+        this<span class="s1">. r = </span><span class="s2">0</span><span class="s0">;</span>
+        this<span class="s1">.ARR = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;(</span><span class="s0">this</span><span class="s1">.SIZE)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public </span><span class="s1">CAQueue(){</span>
+        <span class="s0">this</span><span class="s1">.SIZE = </span><span class="s2">10</span><span class="s0">; </span><span class="s3">//default size</span>
+        <span class="s0">this</span><span class="s1">.f = </span><span class="s2">0</span><span class="s0">;</span>
+        this<span class="s1">. r = </span><span class="s2">0</span><span class="s0">;</span>
+        this<span class="s1">.ARR = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;(</span><span class="s0">this</span><span class="s1">.SIZE)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">private int </span><span class="s1">mod(</span><span class="s0">int </span><span class="s1">VAL){</span>
+        <span class="s0">return </span><span class="s1">VAL % </span><span class="s0">this</span><span class="s1">.SIZE</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    @Override
+    <span class="s0">public void </span><span class="s1">enqueue(E x) </span><span class="s0">throws </span><span class="s1">FullException {</span>
+
+        <span class="s0">if</span><span class="s1">(</span><span class="s0">this</span><span class="s1">.isFull()) </span><span class="s0">throw </span><span class="s1">(</span><span class="s0">new </span><span class="s1">FullException(</span><span class="s4">&quot;full queue&quot;</span><span class="s1">))</span><span class="s0">;</span>
+
+        else<span class="s1">{</span>
+            <span class="s0">this</span><span class="s1">.ARR.add(</span><span class="s0">this</span><span class="s1">.r</span><span class="s0">,</span><span class="s1">x)</span><span class="s0">;</span>
+            this<span class="s1">.r = </span><span class="s0">this</span><span class="s1">.mod(</span><span class="s0">this</span><span class="s1">.r +</span><span class="s2">1</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+    }
+
+    @Override
+    <span class="s0">public void </span><span class="s1">dequeue() {</span>
+
+        <span class="s0">if </span><span class="s1">(</span><span class="s0">this</span><span class="s1">.isEmpty() ) </span><span class="s0">return;</span>
+
+        else <span class="s1">{</span>
+            <span class="s0">this</span><span class="s1">.f = </span><span class="s0">this</span><span class="s1">.mod(</span><span class="s0">this</span><span class="s1">.f +</span><span class="s2">1</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    }
+
+    @Override
+    <span class="s0">public </span><span class="s1">E first() </span><span class="s0">throws </span><span class="s1">EmptyException {</span>
+        <span class="s0">if</span><span class="s1">(</span><span class="s0">this</span><span class="s1">.isEmpty()) </span><span class="s0">throw </span><span class="s1">(</span><span class="s0">new </span><span class="s1">EmptyException(</span><span class="s4">&quot;empty queue&quot;</span><span class="s1">))</span><span class="s0">;</span>
+
+        else<span class="s1">{</span>
+            <span class="s0">return this</span><span class="s1">.ARR.get(</span><span class="s0">this</span><span class="s1">.f)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    }
+
+    @Override
+    <span class="s0">public boolean </span><span class="s1">isEmpty() {</span>
+        <span class="s0">return this</span><span class="s1">.r == </span><span class="s0">this</span><span class="s1">.f</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    @Override
+    <span class="s0">public boolean </span><span class="s1">isFull() {</span>
+        <span class="s0">return </span><span class="s1">mod(</span><span class="s0">this</span><span class="s1">.r +</span><span class="s2">1</span><span class="s1">) == </span><span class="s0">this</span><span class="s1">.f</span><span class="s0">;</span>
+    <span class="s1">}</span>
+}
+</pre>
+</body>
+</html>

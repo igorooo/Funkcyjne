@@ -3,6 +3,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Company {
 
@@ -30,7 +33,13 @@ public class Company {
             else{
                 System.out.println("Emplyee is not specialist!");
             }
+        }
+    }
 
+    void company_pay_rise(double PROC){
+
+        for(Employee EMP : ARRAY){
+            EMP.pay_rise(PROC);
         }
     }
 
@@ -68,7 +77,50 @@ public class Company {
         }
     }
 
+    void add_employee(Employee EMP){
+        ARRAY.add(EMP);
+    }
+
+    ArrayList<Task> filter_by(Predicate<Task>... PRED){
+
+        Stream<Task> TASKSS = this.TASKS.stream();
+
+        for(Predicate pred : PRED){
+
+            TASKSS = TASKSS.filter(pred);
+        }
+
+        return TASKSS.collect(Collectors.toCollection(ArrayList::new));
+    }
+
+
+
     Company(){
         ARRAY = new ArrayList<>();
+        TASKS = new ArrayList<>();
+    }
+
+    @Override
+    public String toString() {
+
+        String STR = "\nCompany:\n";
+
+        STR += "Emplyess: \n";
+
+
+
+        for(Employee EMP : ARRAY){
+            STR += EMP.toString();
+            STR += "\n";
+        }
+
+        STR += "\nTasks: \n";
+
+        for(Task TASK : TASKS){
+            STR += TASK.toString();
+            STR += "\n";
+        }
+
+        return STR;
     }
 }

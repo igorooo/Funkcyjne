@@ -1,16 +1,18 @@
 public class Task implements Comparable<Task> {
 
-    String NAME,MODE,STATUS;
+    String NAME;
+    Status STATUS;
+    Mode MODE;
     Employee EMPLOYEE;
 
 
     void finish_task() throws  ModeException{
-        if(STATUS.compareTo("IN PROGRESS") != 0){
+        if(STATUS == Status.InProgress ){
             throw (new ModeException("WRONG MODE!"));
         }
 
         else{
-            STATUS = "FINISHED";
+            STATUS = Status.Finished;
         }
     }
 
@@ -22,26 +24,69 @@ public class Task implements Comparable<Task> {
         }
 
         this.EMPLOYEE = EMPLOYEE;
-        this.STATUS = "IN PROGRESS";
+        this.STATUS = Status.InProgress;
     }
 
-    Task(String NAME, String MODE){
+    Task(String NAME, Mode MODE){
         this.NAME = NAME;
         this.MODE = MODE;
-        this.STATUS = "PREPARING";
+        this.STATUS = Status.Preparing;
+        this.EMPLOYEE = new Employee("DEFAULT","EMPLYEE","00000000",0);
     }
 
 
     @Override
     public int compareTo(Task task) {
-        if(this.MODE.compareTo(task.MODE) == 0 ){
+        if(this.MODE == task.MODE){
             return 0;
         }
-        else if(this.MODE.compareTo("PILNY") == 0 ){
-            return 1;
-        }
-        else{
+        else if(this.MODE == Mode.IMPORTANT ){
             return -1;
         }
+        else{
+            return 1;
+        }
+    }
+
+    @Override
+    public String toString() {
+        String STR = "";
+        STR += NAME + " status: ";
+
+        switch (STATUS){
+            case Finished:
+                STR += "Finished";
+                break;
+
+            case InProgress:
+                STR += "In Progress";
+                break;
+
+            case Preparing:
+                STR += "Preparing";
+                break;
+        }
+
+        STR += " mode: ";
+
+        switch (MODE){
+            case IMPORTANT:
+                STR+= "IMPORTANT";
+                break;
+            case NORMAL:
+                STR+= "NORMAL";
+                break;
+        }
+
+        STR += " employee: ";
+
+        if( EMPLOYEE.NAME.compareTo("DEFAULT") == 0){
+            STR += " not assigned";
+        }
+        else{
+            STR += EMPLOYEE.toString();
+        }
+
+        return STR;
     }
 }

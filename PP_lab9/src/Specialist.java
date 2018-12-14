@@ -14,6 +14,6 @@ public class Specialist extends Employee {
 
     @Override
     public String toString() {
-        return (NAME + " " + SURNAME + " " + PESEL + " " + Double.toString(SALARY) + " " + Double.toString(BONUS) + "\n");
+        return (NAME + " " + SURNAME + " " + PESEL + " " + Double.toString(SALARY) + " " + Double.toString(BONUS));
     }
 }

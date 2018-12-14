@@ -22,3 +22,8 @@ let l1 = lfrom 0;;
 let l2 = lfrom 100;;
 
 ltake(10, zip(l1,l2));;
+
+let l11 = lfrom (-100);;
+let l22 = lfrom 100;;
+
+ltake(10, zip(l11,l22));;

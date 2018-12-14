@@ -23,6 +23,6 @@ public class Employee {
 
     @Override
     public String toString() {
-        return (NAME + " " + SURNAME + " " + PESEL + " " + Double.toString(SALARY) + "\n");
+        return (NAME + " " + SURNAME + " " + PESEL + " " + Double.toString(SALARY));
     }
 }

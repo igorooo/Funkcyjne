@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>zad1.sc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #cc7832; font-weight: bold;}
+.s2 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+zad1.sc</font>
+</center></td></tr></table>
+<pre>
+
+<span class="s1">class </span><span class="s0">Time(</span><span class="s1">var </span><span class="s0">hour: Int){</span>
+  <span class="s1">if</span><span class="s0">(hour &lt; </span><span class="s2">0</span><span class="s0">) hour = </span><span class="s2">0</span>
+
+  <span class="s1">def </span><span class="s0">time: Int = hour</span>
+
+  <span class="s1">def </span><span class="s0">time_= (newHour :  Int){</span>
+    <span class="s1">if</span><span class="s0">(newHour &lt; </span><span class="s2">0</span><span class="s0">) hour = </span><span class="s2">0</span>
+    <span class="s1">else </span><span class="s0">hour = newHour</span>
+  }
+
+}
+
+<span class="s1">object </span><span class="s0">Time{</span>
+  <span class="s1">def </span><span class="s0">apply(h :Int = </span><span class="s2">0</span><span class="s0">) = </span><span class="s1">new </span><span class="s0">Time(h)</span>
+}
+
+<span class="s1">var </span><span class="s0">tim1 = </span><span class="s1">new </span><span class="s0">Time(</span><span class="s2">5</span><span class="s0">)</span>
+<span class="s1">var </span><span class="s0">tim = Time(</span><span class="s2">3</span><span class="s0">)</span>
+
+tim.hour
+tim.time = <span class="s2">1</span>
+<span class="s0">tim.time</span>
+tim.time = -<span class="s2">1</span>
+<span class="s0">tim.time</span>
+
+
+
+
+</pre>
+</body>
+</html>

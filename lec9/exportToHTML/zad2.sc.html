@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>zad2.sc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #cc7832; font-weight: bold;}
+.s2 { color: #cc7832;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+zad2.sc</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">class </span><span class="s0">Time(</span><span class="s1">private var </span><span class="s0">hour: Int</span><span class="s2">, </span><span class="s1">private var </span><span class="s0">minute: Int) {</span>
+  require( <span class="s3">0 </span><span class="s0">&lt;= hour &amp;&amp; hour &lt; </span><span class="s3">24</span><span class="s2">, </span><span class="s4">&quot;hour= &quot;</span><span class="s0">+hour)</span>
+  require( <span class="s3">0 </span><span class="s0">&lt;= minute &amp;&amp; minute &lt; </span><span class="s3">60</span><span class="s2">, </span><span class="s4">&quot;minute = &quot;</span><span class="s0">+minute)</span>
+
+
+}
+
+<span class="s1">var </span><span class="s0">tim1 = </span><span class="s1">new </span><span class="s0">Time(</span><span class="s3">0</span><span class="s2">,</span><span class="s3">2</span><span class="s0">)</span>
+
+
+
+<span class="s1">try</span><span class="s0">{</span>
+  <span class="s1">var </span><span class="s0">tim = </span><span class="s1">new </span><span class="s0">Time(</span><span class="s3">1</span><span class="s2">,</span><span class="s3">59</span><span class="s0">)</span>
+}
+
+<span class="s1">catch </span><span class="s0">{</span>
+  <span class="s1">case </span><span class="s0">e: IllegalArgumentException =&gt; println(</span><span class="s4">&quot;IllegalArgument&quot;</span><span class="s0">)</span>
+  <span class="s1">case </span><span class="s0">_: Throwable =&gt; println(</span><span class="s4">&quot;whatever&quot;</span><span class="s0">)</span>
+}
+
+</pre>
+</body>
+</html>

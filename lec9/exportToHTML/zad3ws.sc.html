@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>zad3ws.sc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832; font-weight: bold;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+.s5 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+zad3ws.sc</font>
+</center></td></tr></table>
+<pre><span class="s0">class </span><span class="s1">Pojazd(</span><span class="s0">private val </span><span class="s1">Producent: String</span><span class="s2">, </span><span class="s0">private val </span><span class="s1">Model: String</span><span class="s2">,</span>
+             <span class="s0">private val </span><span class="s1">PYear: Int = -</span><span class="s3">1</span><span class="s2">, </span><span class="s0">private var </span><span class="s1">CarNumber: String = </span><span class="s4">&quot;&quot;</span><span class="s1">) {</span>
+
+  <span class="s0">def this</span><span class="s1">(prod: String</span><span class="s2">, </span><span class="s1">mod: String</span><span class="s2">, </span><span class="s1">cnum: String) {</span>
+    <span class="s0">this</span><span class="s1">(prod</span><span class="s2">,</span><span class="s1">mod</span><span class="s2">,</span><span class="s1">-</span><span class="s3">1</span><span class="s2">,</span><span class="s1">cnum)</span>
+  }
+
+}
+
+<span class="s5">// producent model</span>
+// producent model pyear
+// producent model carnumber
+// producent model pyear carnumber
+
+//konstruktor glowny powinien byc 4 parametrowy, poniewaz:
+// 1. utworzenie pól klasy z poziomu listy argumentow
+// 2. wskazanie parametrow obowiazkowych oraz opcjonalnych
+// 3. nadanie opcjonalnym wartosci domyslnych
+
+<span class="s0">var </span><span class="s1">p1 = </span><span class="s0">new </span><span class="s1">Pojazd(</span><span class="s4">&quot;Volvo&quot;</span><span class="s2">,</span><span class="s4">&quot;A&quot;</span><span class="s1">)</span>
+
+<span class="s0">var </span><span class="s1">p2 = </span><span class="s0">new </span><span class="s1">Pojazd(</span><span class="s4">&quot;Volvo&quot;</span><span class="s2">,</span><span class="s4">&quot;A&quot;</span><span class="s2">,</span><span class="s3">2008</span><span class="s1">)</span>
+
+<span class="s0">var </span><span class="s1">p3 = </span><span class="s0">new </span><span class="s1">Pojazd(</span><span class="s4">&quot;Volvo&quot;</span><span class="s2">,</span><span class="s4">&quot;A&quot;</span><span class="s2">,</span><span class="s4">&quot;NDZ123&quot;</span><span class="s1">)</span>
+
+<span class="s0">var </span><span class="s1">p4 = </span><span class="s0">new </span><span class="s1">Pojazd(</span><span class="s4">&quot;Volvo&quot;</span><span class="s2">,</span><span class="s4">&quot;A&quot;</span><span class="s2">, </span><span class="s3">2008</span><span class="s2">, </span><span class="s4">&quot;NDZ123&quot; </span><span class="s1">)</span>
+
+</pre>
+</body>
+</html>

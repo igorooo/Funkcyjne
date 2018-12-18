@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>zad4.scala</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #cc7832; font-weight: bold;}
+.s2 { color: #6a8759;}
+.s3 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+zad4.scala</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">object </span><span class="s0">UzycieWyjatkow{</span>
+
+  <span class="s1">def </span><span class="s0">main(args: Array[String]): Unit = {</span>
+
+    <span class="s1">try </span><span class="s0">{</span>
+      metoda1()
+    }
+
+    <span class="s1">catch </span><span class="s0">{</span>
+      <span class="s1">case </span><span class="s0">e : Exception =&gt;</span>
+        println(e.getMessage)
+        e.printStackTrace()
+    }
+
+  }
+
+
+  <span class="s1">def </span><span class="s0">metoda1():Unit = {</span>
+    metoda2()
+  }
+
+  <span class="s1">def </span><span class="s0">metoda2():Unit = {</span>
+    metoda3()
+  }
+
+  <span class="s1">def </span><span class="s0">metoda3():Unit = {</span>
+    <span class="s1">throw new </span><span class="s0">Exception( </span><span class="s2">&quot;Wyjatek zgloszony w metoda3&quot; </span><span class="s0">)</span>
+  }
+
+}
+
+<span class="s3">/* 
+Wyjatek zgloszony w metoda3 
+java.lang.Exception: Wyjatek zgloszony w metoda3 
+  at UzycieWyjatkow$.metoda3(zad4.scala:28) 
+  at UzycieWyjatkow$.metoda2(zad4.scala:24) 
+  at UzycieWyjatkow$.metoda1(zad4.scala:20) 
+  at UzycieWyjatkow$.main(zad4.scala:7) 
+  at UzycieWyjatkow.main(zad4.scala) 
+ */</span>
+</pre>
+</body>
+</html>

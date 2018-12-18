@@ -1,0 +1,125 @@
+<html>
+<head>
+<title>test.scala</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #629755; font-style: italic;}
+.s2 { color: #cc7832; font-weight: bold;}
+.s3 { color: #cc7832;}
+.s4 { color: #6897bb;}
+.s5 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+test.scala</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">/** ZAD 2a */</span>
+<span class="s2">class </span><span class="s0">Time(</span><span class="s2">private var </span><span class="s0">hour: Int</span><span class="s3">, </span><span class="s2">private var </span><span class="s0">minute: Int) {</span>
+  require( <span class="s4">0 </span><span class="s0">&lt;= hour &amp;&amp; hour &lt; </span><span class="s4">24</span><span class="s3">, </span><span class="s5">&quot;hour= &quot;</span><span class="s0">+hour)</span>
+  require( <span class="s4">0 </span><span class="s0">&lt;= minute &amp;&amp; minute &lt; </span><span class="s4">60</span><span class="s3">, </span><span class="s5">&quot;minute = &quot;</span><span class="s0">+minute)</span>
+
+  <span class="s2">def </span><span class="s0">h:(Int) = hour</span>
+
+  <span class="s2">def </span><span class="s0">h_=(newHour:Int): Unit ={</span>
+    require( <span class="s4">0 </span><span class="s0">&lt;= newHour &amp;&amp; newHour &lt; </span><span class="s4">24</span><span class="s3">, </span><span class="s5">&quot;newHour= &quot;</span><span class="s0">+newHour)</span>
+    hour = newHour
+  }
+
+  <span class="s2">def </span><span class="s0">m:(Int) = minute</span>
+
+  <span class="s2">def </span><span class="s0">m_=(newMinute:Int): Unit ={</span>
+    require(<span class="s4">0 </span><span class="s0">&lt;= newMinute &amp;&amp; newMinute &lt; </span><span class="s4">60</span><span class="s3">,</span><span class="s5">&quot;newMinute= &quot;</span><span class="s0">+newMinute)</span>
+    minute = newMinute
+  }
+
+  <span class="s2">def </span><span class="s0">before(other: Time):Boolean = {</span>
+
+    <span class="s2">if</span><span class="s0">(other.h &gt; </span><span class="s2">this</span><span class="s0">.h) </span><span class="s2">true</span>
+    else if<span class="s0">(other.h &lt; </span><span class="s2">this</span><span class="s0">.h ) </span><span class="s2">false</span>
+    else <span class="s0">{</span>
+      <span class="s2">if</span><span class="s0">(other.m &gt; </span><span class="s2">this</span><span class="s0">.m) </span><span class="s2">true</span>
+      else false
+    <span class="s0">}</span>
+  }
+
+
+}
+
+<span class="s1">/** ZAD 2b */</span>
+<span class="s2">class </span><span class="s0">Time2(hour: Int</span><span class="s3">,</span><span class="s0">minute: Int) {</span>
+  require( <span class="s4">0 </span><span class="s0">&lt;= hour &amp;&amp; hour &lt; </span><span class="s4">24</span><span class="s3">, </span><span class="s5">&quot;hour= &quot;</span><span class="s0">+hour)</span>
+  require( <span class="s4">0 </span><span class="s0">&lt;= minute &amp;&amp; minute &lt; </span><span class="s4">60</span><span class="s3">, </span><span class="s5">&quot;minute = &quot;</span><span class="s0">+minute)</span>
+
+  <span class="s2">private var </span><span class="s0">time:Int = minute + hour*</span><span class="s4">60</span>
+
+
+  <span class="s2">def </span><span class="s0">h:(Int) = time / </span><span class="s4">60</span>
+
+  <span class="s2">def </span><span class="s0">h_=(newHour:Int): Unit ={</span>
+    require( <span class="s4">0 </span><span class="s0">&lt;= newHour &amp;&amp; newHour &lt; </span><span class="s4">24</span><span class="s3">, </span><span class="s5">&quot;newHour= &quot;</span><span class="s0">+newHour)</span>
+    time = (time % <span class="s4">60</span><span class="s0">) + newHour * </span><span class="s4">60</span>
+  <span class="s0">}</span>
+
+  <span class="s2">def </span><span class="s0">m:(Int) = time % </span><span class="s4">60</span>
+
+  <span class="s2">def </span><span class="s0">m_=(newMinute:Int): Unit ={</span>
+    require(<span class="s4">0 </span><span class="s0">&lt;= newMinute &amp;&amp; newMinute &lt; </span><span class="s4">60</span><span class="s3">,</span><span class="s5">&quot;newMinute= &quot;</span><span class="s0">+newMinute)</span>
+    time = time - (time % <span class="s4">60</span><span class="s0">) + newMinute</span>
+  }
+
+  <span class="s2">def </span><span class="s0">before(other: Time2):Boolean = </span><span class="s2">this</span><span class="s0">.time &lt; other.time</span>
+
+}
+
+<span class="s1">/** ZAD 3 */</span>
+
+<span class="s2">class </span><span class="s0">Pojazd(</span><span class="s2">private val </span><span class="s0">Producent: String</span><span class="s3">, </span><span class="s2">private val </span><span class="s0">Model: String</span><span class="s3">, </span><span class="s2">private val </span><span class="s0">PYear: Int = -</span><span class="s4">1</span><span class="s3">, </span><span class="s2">private var </span><span class="s0">CarNumber: String = </span><span class="s5">&quot;&quot;</span><span class="s0">) {</span>
+
+
+
+}
+
+
+<span class="s2">object </span><span class="s0">test{</span>
+
+  <span class="s2">def </span><span class="s0">main(args: Array[String]): Unit = {</span>
+
+
+    <span class="s2">var </span><span class="s0">tim = </span><span class="s2">new </span><span class="s0">Time(</span><span class="s4">2</span><span class="s3">,</span><span class="s4">20</span><span class="s0">)</span>
+    <span class="s2">var </span><span class="s0">tim1 = </span><span class="s2">new </span><span class="s0">Time(</span><span class="s4">1</span><span class="s3">,</span><span class="s4">2</span><span class="s0">)</span>
+    <span class="s2">var </span><span class="s0">tim2 = </span><span class="s2">new </span><span class="s0">Time(</span><span class="s4">1</span><span class="s3">,</span><span class="s4">59</span><span class="s0">)</span>
+
+    println(tim.h + <span class="s5">&quot; &quot; </span><span class="s0">+ tim.m)</span>
+
+    println(tim1.before(tim))
+    println(tim.before(tim1))
+    println(tim.before(tim))
+    println(tim1.before(tim2))
+
+    println(<span class="s5">&quot;</span><span class="s3">\n</span><span class="s5">Time2 </span><span class="s3">\n</span><span class="s5">&quot;</span><span class="s0">)</span>
+
+    <span class="s2">var </span><span class="s0">t = </span><span class="s2">new </span><span class="s0">Time2(</span><span class="s4">2</span><span class="s3">,</span><span class="s4">20</span><span class="s0">)</span>
+    <span class="s2">var </span><span class="s0">t1 = </span><span class="s2">new </span><span class="s0">Time2(</span><span class="s4">1</span><span class="s3">,</span><span class="s4">2</span><span class="s0">)</span>
+    <span class="s2">var </span><span class="s0">t2 = </span><span class="s2">new </span><span class="s0">Time2(</span><span class="s4">1</span><span class="s3">,</span><span class="s4">59</span><span class="s0">)</span>
+
+    println(t.h + <span class="s5">&quot; &quot; </span><span class="s0">+ t.m)</span>
+
+    t.h = <span class="s4">4</span>
+    <span class="s0">t.m = </span><span class="s4">40</span>
+
+    <span class="s0">println(t.h + </span><span class="s5">&quot; &quot; </span><span class="s0">+ t.m)</span>
+
+    println(<span class="s5">&quot; ZAD 3&quot;</span><span class="s0">)</span>
+
+
+
+  }
+}
+</pre>
+</body>
+</html>

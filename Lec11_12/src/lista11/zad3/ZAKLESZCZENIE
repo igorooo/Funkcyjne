@@ -1,0 +1,48 @@
+Consumer 1 waiting
+Producer 2 producing 1
+Consumer 3 waiting
+Consumer 2 waiting
+Producer 2 produced: 1
+Producer 3 producing 1
+Producer 1 producing 1
+1 0 0 0 0 
+Producer 2 producing 2
+Consumer 1 consuming: 1
+1 0 0 0 0 
+Consumer 1 consumed 1
+Consumer 1 waiting
+Producer 2 produced: 2
+1 2 0 0 0 
+Producer 2 producing 3
+Producer 2 produced: 3
+1 2 3 0 0 
+Producer 2 producing 4
+Producer 2 produced: 4
+1 2 3 4 0 
+Producer 2 producing 5
+Producer 1 produced: 1
+1 2 3 4 1 
+Producer 1 producing 2
+Producer 1 produced: 2
+2 2 3 4 1 
+Producer 1 producing 3
+Producer 1 waiting with 3
+Producer 3 waiting with 1
+Producer 2 waiting with 5
+Consumer 3 consuming: 2
+2 2 3 4 1 
+Consumer 3 consumed 2
+Consumer 3 consuming: 3
+2 2 3 4 1 
+Consumer 3 consumed 3
+Consumer 2 consuming: 4
+2 2 3 4 1 
+Consumer 2 consumed 4
+Consumer 3 consuming: 1
+2 2 3 4 1 
+Consumer 3 consumed 1
+Consumer 2 consuming: 2
+2 2 3 4 1 
+Consumer 2 consumed 2
+Consumer 2 waiting
+Consumer 3 waiting
